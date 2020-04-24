@@ -1,23 +1,24 @@
 {
-  "name": "homebridge-huejay",
-  "version": "1.5.1",
-  "description": "Homebridge Plugin for Philips Hue accessories based on Huejay",
+  "name": "homebridge-hue-power-sensor",
+  "version": "0.0.1",
+  "description": "Homebridge Plugin for adding a power sensor for Philips Hue light bulbs",
   "keywords": [
     "philips",
     "hue",
     "huejay",
     "homebridge",
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "powersensor"
   ],
   "license": "GPL-3.0",
-  "bugs": "https://github.com/raymondelooff/homebridge-huejay/issues",
+  "bugs": "https://github.com/peterot/homebridge-hue-power-sensor/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/raymondelooff/homebridge-huejay.git"
+    "url": "git@github.com:peterot/homebridge-hue-power-sensor.git"
   },
-  "author": "Raymon de Looff <raydelooff@gmail.com>",
+  "author": "Pete Ottery",
   "dependencies": {
-    "huejay": "^1.8.4"
+    "huejay": "^1.9.0"
   },
   "devDependencies": {
     "eslint": "^6.3.0"

@@ -1,22 +1,16 @@
-# Philips Hue for Homebridge
+# Warning
 
-[![npm](https://img.shields.io/npm/v/homebridge-huejay.svg)](https://www.npmjs.com/package/homebridge-huejay)
-[![npm](https://img.shields.io/david/raymondelooff/homebridge-huejay.svg)](https://david-dm.org/raymondelooff/homebridge-huejay)
-[![npm](https://img.shields.io/npm/dt/homebridge-huejay.svg)](https://www.npmjs.com/package/homebridge-huejay)
+This is in development as is not yet funtional!
 
-Homebridge Huejay is a Homebridge Plugin for Philips Hue accessories based on Huejay. This plugin will add HomeKit support for Hue accessories that don't have HomeKit support (yet), for example the Hue Motion Sensor.
+# Philips Hue Power Sensor for Homebridge
 
-## Features
-- Adds HomeKit support for accessories that don't have HomeKit support out-of-the-box, like the Hue Motion Sensor.
-- Adds HomeKit support for sensors that are not visible via the official Philips Hue App, like the ambient and temperature sensors of the Hue Motion Sensor.
-- Automatic detection of Bridges. Homebridge Huejay also supports multiple Bridges.
-- Accessory information is updated when HomeKit requests the value. The information is therefore always up-to-date.
+Homebridge Hue Power Sensor is a Homebridge Plugin for Philips Hue light bulbs. This plugin will add HomeKit support for detecting Hue light bulb power on status.
 
 ## Installation
 Installation is easy, just execute the following command on your Homebridge host machine.
 
 ```
-npm install -g homebridge-huejay
+npm install -g homebridge-hue-power-sensor
 ```
 
 ## Configuration
@@ -119,11 +113,13 @@ If you want to disable HomeKit support for a specific accessory you can add the 
 ```
 
 ## Issues
-If you have any issues with the extension, please let me know via the GitHub [issues section](https://github.com/raymondelooff/homebridge-huejay/issues). Provide as much information as possible, including the system log, so I can try to reproduce the problem. Turn Homebridge debugging on before posting your system log. Make sure you don't post any private information like API keys or secret keys.
+If you have any issues with the extension, please let me know via the GitHub [issues section](https://github.com/peterot/homebridge-hue-power-sensor/issues). Provide as much information as possible, including the system log, so I can try to reproduce the problem. Turn Homebridge debugging on before posting your system log. Make sure you don't post any private information like API keys or secret keys.
 
 ## Contribution
 Your help is more than welcome! If you own accessories that are not supported by Homebridge Huejay at this moment, feel free to create a pull request with the implementation for other accessories. Make sure to use the same code style as used for the existing code base. Thank you!
 
+## Acknowledgements 
+This plugin is based on and forked from [Homebridge Huejay](https://github.com/raymondelooff/homebridge-huejay/).
+
 ## License & Copyright
-Copyright (c) 2018 Raymon de Looff <raydelooff@gmail.com>.
 This plugin is open-source software licensed under the GPLv3 license.
