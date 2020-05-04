@@ -1,10 +1,8 @@
-# Warning
-
-This is in development as is not yet funtional!
-
 # Philips Hue Power Sensor for Homebridge
 
-Homebridge Hue Power Sensor is a Homebridge Plugin for Philips Hue light bulbs. This plugin will add HomeKit support for detecting Hue light bulb power on status.
+Homebridge Hue Power Sensor is a Homebridge Plugin for Philips Hue light bulbs. 
+
+This plugin adds HomeKit support for detecting Hue light bulb power on status. To achive this the plugin creates a new binary state sensor for each bulb and these sensors can then be used to trigger HomeKit automation rules.
 
 ## Installation
 Installation is easy, just execute the following command on your Homebridge host machine.
@@ -21,21 +19,6 @@ Modify the `config.json` file of your Homebridge installation and add the follow
     {
         "platform": "HuePlatform",
         "name": "Hue"
-    }
-]
-```
-
-Optionally, you may enable or disable support for sensors and/or lights. This plugin also supports a 'generic' mode for both sensors and lights. With the generic mode enabled, this plugin will register all lights and/or sensors with generic capabilities (like on/off toggles and brightness in the case of lights, if supported).
-
-```json
-"platforms": [
-    {
-        "platform": "HuePlatform",
-        "name": "Hue",
-        "enableLights": true,
-        "enableGenericLights": false,
-        "enableSensors": true,
-        "enableGenericSensors": false
     }
 ]
 ```
@@ -69,6 +52,14 @@ You don't have to store the IP of your Bridge in the configuration file. Homebri
 ]
 ```
 
+### Power Sensors
+
+By default the plugin creates a new sensor for each light attached to each of the linked bridges. The sensor will appear as a new Contact Sensor with the name `[bulb name] Power Sensor`. Contact Sensor is used as it is the simplest of the standard sensor types.
+
+Each new sensor is 'open' when the associated light is both on and reachable (i.e. powered). The sensor is 'closed' if the light is either off or unreachable (i.e. powered down).
+
+The sensor state is updated every second. However, the Hue bridge can take several seconds to update the reachable state for a connected accessory so there can be an annoying delay before changes are detected and correctly reflected.
+
 ### Advanced Client configuration
 You may also pass advanced options to the Huejay clients. Read the [Huejay documentation](https://github.com/sqmk/huejay#client-usage) for more information about the settings.
 
@@ -91,8 +82,8 @@ You may also pass advanced options to the Huejay clients. Read the [Huejay docum
 ]
 ```
 
-### Ignoring accessories
-If you want to disable HomeKit support for a specific accessory you can add the unique ID of the accessory to the `ignoreAccessories` option in the configuration. If you don't know what the unique ID is of a specific accessory, you can look for the 'Serial Number' of the accessory you want to disable. Homebridge Huejay registers the unique ID of an accessory as the 'Serial Number' to HomeKit. You can find the 'Serial Number' at the detail view of the accessory you want to disable. Most of the time it looks like a MAC address.
+### Ignoring lights
+If you want to disable HomeKit support for a specific light you can add the unique ID of the light to the `ignoreAccessories` option in the configuration. If you don't know what the unique ID is of a specific light, you can look for the 'Serial Number' of the light you want to disable. Homebridge Huejay registers the unique ID of an light as the 'Serial Number' to HomeKit. You can find the 'Serial Number' at the detail view of the light you want to disable. Most of the time it looks like a MAC address.
 
 ```json
 "platforms": [

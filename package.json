@@ -1,6 +1,6 @@
 {
   "name": "homebridge-hue-power-sensor",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Homebridge Plugin for adding a power sensor for Philips Hue light bulbs",
   "keywords": [
     "philips",
