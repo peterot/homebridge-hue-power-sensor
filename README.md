@@ -103,6 +103,14 @@ If you want to disable HomeKit support for a specific light you can add the uniq
 ]
 ```
 
+## Developing
+
+When developing this plugin it can be loaded into Homebridge by executing the following command:
+
+`./bin/homebridge -D -I -P ./homebridge-hue-power-sensor/`
+
+If you need to clear out previously registered accessories. Simply stop Homebridge, delete the contents of you local `~.homebridge/accessories/cachedAccessories` file, then start Homebridge again as above.
+
 ## Issues
 If you have any issues with the extension, please let me know via the GitHub [issues section](https://github.com/peterot/homebridge-hue-power-sensor/issues). Provide as much information as possible, including the system log, so I can try to reproduce the problem. Turn Homebridge debugging on before posting your system log. Make sure you don't post any private information like API keys or secret keys.
 
